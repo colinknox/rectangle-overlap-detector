@@ -18,8 +18,8 @@ class Rectangle:
         return max(self.y1, self.y2)
     
     def overlaps(self, other):
-        condition_one = self.get_left_x() <= other.get_right_x() # True
-        condition_two = self.get_right_x() >= other.get_left_x() # False
+        condition_one = self.get_left_x() <= other.get_right_x()
+        condition_two = self.get_right_x() >= other.get_left_x()
         condition_three = self.get_bottom_y() <= other.get_top_y()
         condition_four = self.get_top_y() >= other.get_bottom_y()
 
