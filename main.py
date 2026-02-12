@@ -18,16 +18,12 @@ class Rectangle:
         return max(self.y1, self.y2)
     
     def overlaps(self, other):
-        condition_one = self.get_left_x() <= other.get_right_x()
+        condition_one = self.get_left_x() <= other.get_right_x() # True
+        condition_two = self.get_right_x() >= other.get_left_x() # False
+        condition_three = self.get_bottom_y() <= other.get_top_y()
+        condition_four = self.get_top_y() >= other.get_bottom_y()
 
-        return condition_one
-
-
-rectangle = Rectangle(5, 4, 8, 5)
-rectangle_two = Rectangle(6, 2, 3, 8)
-
-
-
-print(f"DEBUG: Rectangle 1 | left side = {rectangle.get_left_x()}, right side = {rectangle.get_right_x()}")
-print(f"DEBUG: Rectangle 2 | left side = {rectangle_two.get_left_x()}, right side = {rectangle_two.get_right_x()}")
-print(f"DEBUG: Rectangle 1 overlaps Rectangle 2 = {rectangle.overlaps(rectangle_two)}")
+        if condition_one and condition_two and condition_three and condition_four:
+            return True
+        else:
+            return False
